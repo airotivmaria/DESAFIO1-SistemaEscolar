@@ -3,13 +3,11 @@ package infantil.escola;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 
 public class Alunos extends escola{
-    ArrayList<String> TurmaAlunos = new ArrayList<>();
-    ArrayList<Turma> turmas = new ArrayList<>();
 
+    //METÓDO DE CADASTRO DOS ALUNOS QUE É CHAMADO LÁ NA MAIN
     public void cadastrar(){
         Scanner scanner = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -70,6 +68,11 @@ public class Alunos extends escola{
             }
         } while (true);
 
+    }
+    @Override
+    public String toString() {
+        return "Aluno= " + getNomeAluno() +
+                ", matricula= " + getMatricula() + ", turma= " + getNomeTurma();
     }
 }
 
