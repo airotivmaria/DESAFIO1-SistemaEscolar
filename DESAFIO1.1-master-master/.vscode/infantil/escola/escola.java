@@ -17,7 +17,6 @@ public class escola {
     }
     public void setNomeAluno(String nomeAluno) {
         escola.nomeAluno = nomeAluno;
-        TurmaAlunos.add(nomeAluno);
     }
     public String getMatricula() {
         return matricula;
@@ -37,37 +36,9 @@ public class escola {
     public void setNomeMae(String nomeMae) {
         this.nomeMae = nomeMae;
     }
-
-    //ATRIBUTOS PROFESSOR
-    private String grauInstrucao;
-    private String matriculaProfessor;
-    private String nomeProfessor;
-    private double salario;
-    
-    //Getters e setters Professor
-    public String getGrauInstrucao() {
-        return grauInstrucao;
-    }
-    public void setGrauInstrucao(String grauInstrucao) {
-        this.grauInstrucao = grauInstrucao;
-    }
-    public String getMatriculaProfessor() {
-        return matriculaProfessor;
-    }
-    public void setMatriculaProfessor(String matriculaProfessor) {
-        this.matriculaProfessor = matriculaProfessor;
-    }
-    public String getNomeProfessor() {
-        return nomeProfessor;
-    }
-    public void setNomeProfessor(String nomeProfessor) {
-        this.nomeProfessor = nomeProfessor;
-    }
-    public double getSalario() {
-        return salario;
-    }
-    public void setSalario(double salario) {
-        this.salario = salario;
+    public void adicionarAlunosETurma (Alunos turmAlunos){
+        TurmaAlunos.add(nomeAluno);
+        TurmaAlunos.add(nomeTurma);
     }
 
     //ATRIBUTOS DE TURMA
@@ -87,8 +58,7 @@ public class escola {
         return nomeTurma;
     }
     public void setNomeTurma(String nomeTurma) {
-        escola.nomeTurma = nomeTurma;
-        TurmaAlunos.add(nomeTurma);
+        this.nomeTurma = nomeTurma;
     }
     public int getSala() {
         return sala;
@@ -102,4 +72,5 @@ public class escola {
     public void setHorario(String horario) {
         this.horario = horario;
     }
+  
 }
