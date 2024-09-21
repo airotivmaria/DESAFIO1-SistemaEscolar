@@ -1,11 +1,10 @@
 package infantil.escola;
 
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Turma extends escola {
 
+    //MÉTODO DE CADASTRO DE TURMA QUE É CHAMADO LÁ NA MAIN
     public void cadastrarTurma() {
         Scanner scanner = new Scanner(System.in);
         do {
@@ -23,7 +22,7 @@ public class Turma extends escola {
         } while (true);
         do {
             System.out.print("Nome da turma [A] [B] [C]: ");
-            setNomeTurma(scanner.nextLine());
+            setNomeTurma(scanner.nextLine().toUpperCase());
             try {
                 if (getNomeTurma().equals("A") || getNomeTurma().equals("B") || getNomeTurma().equals("C")){
                     break;
@@ -37,6 +36,7 @@ public class Turma extends escola {
         do {
             System.out.print("Qual a sala da turma (num de 1 a 10): ");
             setSala(scanner.nextInt());
+            scanner.nextLine();
             try {
                 if(getSala() > 0 && getSala() < 10){
                     break;
@@ -49,16 +49,15 @@ public class Turma extends escola {
         } while (true);
         do {
             System.out.print("Qual o horário da turma [Manhã] [Tarde]: ");
-            setHorario(scanner.nextLine().toLowerCase());
-            try {
-                if(!(getHorario().equals("manhã") || getHorario().equals("tarde"))){
+            setHorario(scanner.nextLine().toLowerCase().trim());
+                if(getHorario().equalsIgnoreCase("tarde")){
                     break;
-                } else {
+                } else if(getHorario().equalsIgnoreCase("manhã")){
+                    break;
+                } 
+                else {
                     System.out.println("O horário deve ser 'manhã' ou 'tarde'");
                 }
-            } catch (Exception e) {
-                System.out.println("O horário deve ser 'manhã' ou 'tarde'");
-            }
         } while (true);
     }
 }
